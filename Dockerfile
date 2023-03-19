@@ -1,7 +1,8 @@
 FROM public.ecr.aws/lambda/nodejs:18 as builder
 WORKDIR /usr/app
-COPY .  .
+COPY ./package.json ./package-lock.json ./
 RUN npm install
+COPY .  .
 RUN npm run build
     
 
