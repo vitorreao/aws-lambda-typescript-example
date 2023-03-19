@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2016 --outfile=dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,7 +12,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.114",
+    "@types/koa": "^2.13.5",
     "@types/node": "^18.15.3",
+    "esbuild": "^0.17.12",
     "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "koa": "^2.14.1",
+    "serverless-http": "^3.2.0"
   }
 }
